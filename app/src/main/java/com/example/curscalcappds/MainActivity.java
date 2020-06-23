@@ -52,12 +52,12 @@ init();
             Elements elements_from_table = our_table.children();
             Element dollar = elements_from_table.get(0);
             Elements dollar_elements = dollar.children();
-            Log.d("MyLog","Tbody size : " + tables.get(1).text());
+            Log.d("MyLog","Tbody size : " + tables.get(0).text());
             for(int i = 0;i < 3;i++ )
             {
                 ListItemClass items = new ListItemClass();
                 items.setData_1(our_table.children().get(i).child(0).text());
-                items.setData_2(our_table.children().get(i).child(1).text().substring(0,7));
+                items.setData_2(our_table.children().get(i).child(1).text());
                 items.setData_3(our_table.children().get(i).child(2).text().substring(0,8));
                 items.setData_4(our_table.children().get(i).child(3).text());
 

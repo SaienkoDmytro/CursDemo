@@ -52,12 +52,21 @@ init();
             Elements elements_from_table = our_table.children();
             Element dollar = elements_from_table.get(0);
             Elements dollar_elements = dollar.children();
-            Log.d("MyLog","Tbody size : " + tables.get(0).text());
-            for(int i = 0;i < 3;i++ )
-            {
+            //checking what we parce
+            Log.d("MyLog","Tbody size : " + our_table.children().get(0).child(1).text());
+// remove additional numbers from String by Split
+            String NBU = our_table.children().get(0).child(1).text();
+            String[] course = NBU.split("/");
+            String [] res1 = course[0].trim().split(" ");
+            String [] res2 = course[1].trim().split(" ");
+            //checking String that we receive
+            Log.d("TAG", res1[0]+" / " + res2[1]);
+
+//lets make arrayList with all info
+            for(int i = 0;i < 3;i++ ) {
                 ListItemClass items = new ListItemClass();
                 items.setData_1(our_table.children().get(i).child(0).text());
-                items.setData_2(our_table.children().get(i).child(1).text());
+                items.setData_2(res1[0]+" / " + res2[1]);
                 items.setData_3(our_table.children().get(i).child(2).text().substring(0,8));
                 items.setData_4(our_table.children().get(i).child(3).text());
 
